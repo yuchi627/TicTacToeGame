@@ -224,49 +224,51 @@ public class MainActivity extends AppCompatActivity {
     private void AutoPlay() {
         List<Integer> emptyCells = new ArrayList<Integer>(); //
         int i = 1 ;
-        for( i = 1 ; i < 10 ; i++)  { 
+        for( i = 1 ; i < 10 ; i++)  { //
             if(!(player1.contains(i)) && !(player2.contains(i))) {
                 emptyCells.add(i);
             }
         }
-        Random r = new Random(); 
-        int randIndex = r.nextInt(emptyCells.size()-0)+0;
-        int cellID = emptyCells.get(randIndex); 
+        if( emptyCells.size() != 0 ) {
+            Random r = new Random(); //
+            int randIndex = r.nextInt(emptyCells.size() - 0) + 0;
+            int cellID = emptyCells.get(randIndex); //
 
-        Button buSelected;
-        switch (cellID) {
-            case 1:
-                buSelected = bu1;
-                break;
-            case 2:
-                buSelected = bu2;
-                break;
-            case 3:
-                buSelected = bu3;
-                break;
-            case 4:
-                buSelected = bu4;
-                break;
-            case 5:
-                buSelected = bu5;
-                break;
-            case 6:
-                buSelected = bu6;
-                break;
-            case 7:
-                buSelected = bu7;
-                break;
-            case 8:
-                buSelected = bu8;
-                break;
-            case 9:
-                buSelected = bu9;
-                break;
-            default:
-                buSelected = bu1;
+            Button buSelected;
+            switch (cellID) {
+                case 1:
+                    buSelected = bu1;
+                    break;
+                case 2:
+                    buSelected = bu2;
+                    break;
+                case 3:
+                    buSelected = bu3;
+                    break;
+                case 4:
+                    buSelected = bu4;
+                    break;
+                case 5:
+                    buSelected = bu5;
+                    break;
+                case 6:
+                    buSelected = bu6;
+                    break;
+                case 7:
+                    buSelected = bu7;
+                    break;
+                case 8:
+                    buSelected = bu8;
+                    break;
+                case 9:
+                    buSelected = bu9;
+                    break;
+                default:
+                    buSelected = bu1;
+            }
+
+            playGame(cellID, buSelected);
         }
-
-        playGame(cellID,buSelected);
     }
 
     void button_init( Button bu ){
