@@ -269,6 +269,12 @@ public class MainActivity extends AppCompatActivity {
         playGame(cellID,buSelected);
     }
 
+    void button_init( Button bu ){
+        bu.setText("");
+        bu.setBackgroundColor(Color.parseColor("#C3C3C3"));
+        bu.setEnabled(true);
+    }
+    
     private void Replay() {
         AlertDialog.Builder bldr = new AlertDialog.Builder(this);  //
         bldr.setTitle("Game Start");
@@ -292,33 +298,15 @@ public class MainActivity extends AppCompatActivity {
         player1.clear();
         player2.clear();
         activePlayer = 1;
-        bu1.setText("");
-        bu1.setBackgroundColor(Color.parseColor("#C3C3C3"));
-        bu2.setText("");
-        bu2.setBackgroundColor(Color.parseColor("#C3C3C3"));
-        bu3.setText("");
-        bu3.setBackgroundColor(Color.parseColor("#C3C3C3"));
-        bu4.setText("");
-        bu4.setBackgroundColor(Color.parseColor("#C3C3C3"));
-        bu5.setText("");
-        bu5.setBackgroundColor(Color.parseColor("#C3C3C3"));
-        bu6.setText("");
-        bu6.setBackgroundColor(Color.parseColor("#C3C3C3"));
-        bu7.setText("");
-        bu7.setBackgroundColor(Color.parseColor("#C3C3C3"));
-        bu8.setText("");
-        bu8.setBackgroundColor(Color.parseColor("#C3C3C3"));
-        bu9.setText("");
-        bu9.setBackgroundColor(Color.parseColor("#C3C3C3"));
-        bu1.setEnabled(true);
-        bu2.setEnabled(true);
-        bu3.setEnabled(true);
-        bu4.setEnabled(true);
-        bu5.setEnabled(true);
-        bu6.setEnabled(true);
-        bu7.setEnabled(true);
-        bu8.setEnabled(true);
-        bu9.setEnabled(true);
+        button_init(bu1);
+        button_init(bu2);
+        button_init(bu3);
+        button_init(bu4);
+        button_init(bu5);
+        button_init(bu6);
+        button_init(bu7);
+        button_init(bu8);
+        button_init(bu9);
 
     }
 }
