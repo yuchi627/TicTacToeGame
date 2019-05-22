@@ -16,7 +16,7 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button bu1 ; //
+    Button bu1 ; // Declare button
     Button bu2 ;
     Button bu3 ;
     Button bu4 ;
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        bu1 = (Button) findViewById(R.id.bu1); //
+        bu1 = (Button) findViewById(R.id.bu1); // Bind button with id
         bu2 = (Button) findViewById(R.id.bu2);
         bu3 = (Button) findViewById(R.id.bu3);
         bu4 = (Button) findViewById(R.id.bu4);
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         bu8 = (Button) findViewById(R.id.bu8);
         bu9 = (Button) findViewById(R.id.bu9);
 
-        AlertDialog.Builder bldr = new AlertDialog.Builder(this);  //
+        AlertDialog.Builder bldr = new AlertDialog.Builder(this);  // Message Box
         bldr.setTitle("Game Start");
         bldr.setPositiveButton("1P", new DialogInterface.OnClickListener() {
             @Override
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
     void buClick(View view) {
         Button buSelected = (Button) view;
         int cellID = 0;
-        switch (buSelected.getId()) { //
+        switch (buSelected.getId()) { 
             case R.id.bu1:
                 cellID = 1;
                 break;
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
         }
         playGame(cellID, buSelected);
         if(isWin) {
-            AlertDialog.Builder bldr = new AlertDialog.Builder(this);  //
+            AlertDialog.Builder bldr = new AlertDialog.Builder(this);  // Message Box
             if(winner == 1)
             {
                 bldr.setTitle("Congratulations! Player1 is win!");
@@ -130,8 +130,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    List<Integer> player1 = new ArrayList<Integer>(); //
-    List<Integer> player2 = new ArrayList<Integer>(); //
+    List<Integer> player1 = new ArrayList<Integer>(); //Player1 clicked button
+    List<Integer> player2 = new ArrayList<Integer>(); 
     int activePlayer = 1;
 
     private void playGame(int cellID,Button buSelected) {
@@ -224,14 +224,14 @@ public class MainActivity extends AppCompatActivity {
     private void AutoPlay() {
         List<Integer> emptyCells = new ArrayList<Integer>(); //
         int i = 1 ;
-        for( i = 1 ; i < 10 ; i++)  { //
+        for( i = 1 ; i < 10 ; i++)  { 
             if(!(player1.contains(i)) && !(player2.contains(i))) {
                 emptyCells.add(i);
             }
         }
-        Random r = new Random(); //
+        Random r = new Random(); 
         int randIndex = r.nextInt(emptyCells.size()-0)+0;
-        int cellID = emptyCells.get(randIndex); //
+        int cellID = emptyCells.get(randIndex); 
 
         Button buSelected;
         switch (cellID) {
@@ -276,7 +276,7 @@ public class MainActivity extends AppCompatActivity {
     }
     
     private void Replay() {
-        AlertDialog.Builder bldr = new AlertDialog.Builder(this);  //
+        AlertDialog.Builder bldr = new AlertDialog.Builder(this);  // Message Box
         bldr.setTitle("Game Start");
         bldr.setPositiveButton("1P", new DialogInterface.OnClickListener() {
             @Override
